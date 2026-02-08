@@ -1,0 +1,44 @@
+located (1.1-2) noble; urgency=medium
+
+  * Source layout cleaned (no pre-installed paths).
+  * No functional changes.
+
+ -- flaneurette <info@flaneurette.com>  Sun, 08 Feb 2026 12:52:00 +0100
+
+located (1.1-1) noble; urgency=medium
+
+  * New upstream release.
+  * Source layout cleaned (no pre-installed paths).
+  * No functional changes.
+
+ -- flaneurette <info@flaneurette.com>  Sun, 08 Feb 2026 12:38:00 +0100
+
+located (1.0-6) noble; urgency=medium
+
+  * Paths corrected
+
+ -- flaneurette <info@flaneurette.com>  Sun, 08 Feb 2026 12:35:00 +0100
+
+located (1.0-5) noble; urgency=medium
+
+  * Symlink created to run located as lcd.
+
+ -- flaneurette <info@flaneurette.com>  Sun, 08 Feb 2026 11:55:00 +0100
+
+located (1.0-4) noble; urgency=medium
+
+  * Install to /usr/bin instead of /usr/local/bin
+
+ -- flaneurette <info@flaneurette.com>  Sat, 07 Feb 2026 17:20:00 +0100
+
+located (1.0-3) noble; urgency=medium
+
+  * Trigger new upload
+
+ -- flaneurette <info@flaneurette.com>  Sat, 07 Feb 2026 17:03:20 +0100
+
+located (1.0-2) unstable; urgency=medium
+
+  * Cleaned up install paths, removed directories from install list
+
+ -- flaneurette <info@flaneurette.com>  Thu, 06 Feb 2026 12:00:00 +0000
