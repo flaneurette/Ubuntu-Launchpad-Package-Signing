@@ -11,18 +11,19 @@ This guide uses the **Located** tool as an example.
 Directory structure:
 
 ```
-located-1.0/
-├── debian/
-│   └── control (file)
-├── usr/
-│   └── local/
-│       └── bin/
-│           └── located (file)
-├── usr/
-│   └── share/
-│       └── man/
-│           └── man1/
-│               └── located.1 (file)
+located-1.1/
+├── located          program
+├── located.1        man page
+└── debian/
+
+```
+
+### Create the orig tarball
+
+From `~/sources`:
+
+```sh
+tar --exclude-vcs --exclude=debian -czf located_1.1.orig.tar.gz located-1.1
 ```
 
 Build the `.deb` locally:
@@ -44,7 +45,7 @@ debuild -S -sa -kB449A805B697AD1DACC829D2E58EC1824E443681
 ## 2. Sign the package (if using `debsign` separately)
 
 ```bash
-debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 located_1.0-1_source.changes
+debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 located_1.1-1_source.changes
 ```
 
 This creates a **signed `.changes` file** for Launchpad.
@@ -54,7 +55,7 @@ This creates a **signed `.changes` file** for Launchpad.
 ## 3. Upload to your PPA
 
 ```bash
-dput ppa:flaneurette/located located_1.0-1_source.changes
+dput ppa:flaneurette/located located_1.1-1_source.changes
 ```
 
 Check that your signature is valid and the upload completes.
