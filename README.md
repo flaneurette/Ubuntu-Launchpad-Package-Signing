@@ -1,3 +1,22 @@
+# For update:
+
+# Update your files in the main folder
+
+# Then create new tarball
+tar czf smash_1.1.orig.tar.gz smash-1.1/
+
+# Bump version in debian/changelog
+dch -v 1.1-0 "Added new features"
+
+# Rebuild and upload
+debuild -S -sa -kB449A805B697AD1DACC829D2E58EC1824E443681
+dput ppa:flaneurette/smash smash_1.1-0_source.change
+
+|
+|
+|
+|
+
 # Packaging, Signing, and Uploading a .deb Package
 
 This guide uses the **lcd** tool as an example.
