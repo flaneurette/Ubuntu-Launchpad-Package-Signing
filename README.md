@@ -13,6 +13,24 @@ debuild -S -sa -kYOURKEY
 dput ppa:flaneurette/smash smash_1.0-0~focal_source.changes
 ```
 
+```
+// PPA Release Builder .smash script
+let package = "smash";
+let version = "1.0-0";
+let key = "B449A805B697AD1D";
+let releases = ["noble", "jammy", "focal"];
+
+for (let release of releases) {
+    echo "Building for " + release + "...";
+    $(dch -v ${version}~${release} "Package for ${release}");
+    $(sed -i "s/noble/${release}/" debian/changelog);
+    $(debuild -S -sa -k${key});
+    $(dput ppa:flaneurette/${package} ${package}_${version}~${release}_source.changes);
+}
+
+echo "All releases uploaded!";
+
+```
 #### Update your files in the main folder
 
 #### Then create new tarball
