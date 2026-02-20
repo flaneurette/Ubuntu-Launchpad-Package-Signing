@@ -8,15 +8,15 @@ sed -i 's/\r//' smash
 
 # Create new tarball
 cd ~/smash
-tar czf smash_1.2.orig.tar.gz --exclude=smash-1.2/debian smash-1.2/
+tar czf smash_1.2-1.orig.tar.gz --exclude=smash-1.2/debian smash-1.2-1/
 
 # Bump version
-cd smash-1.2
-dch -v 1.2-0 "Fix float typecasting and clean output improvements"
+cd smash-1.2-1
+#dch -v 1.2-1 "Fix float typecasting and clean output improvements"
 
 # Build and upload
 debuild -S -sa -kYOURKEY
-dput ppa:flaneurette/smash smash_1.2-0_source.changes
+dput ppa:flaneurette/smash smash_1.2-1_source.changes
 ```
 
 # Update:
