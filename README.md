@@ -3,7 +3,7 @@
 ```
 tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
 cd smash-1.3
-debuild -S -sa -kD820A9F1F6945B042A63B50A2704A1EA4E14F1BB
+debuild -S -sa -kEE274F961CF4A8143BC68EEFB240191A0B2B7B8C
 cd ../
 dput ppa:flaneurette/smash smash_1.3-0_source.changes
 
@@ -28,7 +28,7 @@ gpg --list-secret-keys --keyid-format LONG
 Export the new public key:
 
 ```
-gpg --export --armor 2704A1EA4E14F1BB > public_key.asc
+gpg --export --armor B240191A0B2B7B8C > public_key.asc
 ```
 
 Decrypt Launchpad PGP message:
