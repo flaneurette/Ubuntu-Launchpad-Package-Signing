@@ -32,14 +32,14 @@ fqdn = ppa.launchpad.net
 method = sftp
 incoming = ~flaneurette/ubuntu/smash
 login = flaneurette
-ssh_config_options = StrictHostKeyChecking=no
+# ssh_config_options = StrictHostKeyChecking=no
 
 [ppa:flaneurette/smash]
 fqdn = ppa.launchpad.net
 method = sftp
 incoming = ~flaneurette/ubuntu/smash
 login = flaneurette
-ssh_config_options = StrictHostKeyChecking=no
+# ssh_config_options = StrictHostKeyChecking=no
 
 [ftp-master]
 fqdn = ppa.launchpad.net
