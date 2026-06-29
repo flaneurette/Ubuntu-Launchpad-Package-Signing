@@ -20,17 +20,17 @@ dput -c ~/.dput.cf smash_1.3-0_source.changes
 nano ~/.dput.cf
 
 ```
-[DEFAULT]
-# Default settings (applies to all uploads)
-fqdn = upload.debian.org
-method = ftp
-incoming = ftp-master
-login = anonymous
-
 [ppa.launchpad.net]
 fqdn = ppa.launchpad.net
 method = sftp
 incoming = ~flaneurette/ubuntu/smash
+login = flaneurette
+# ssh_config_options = StrictHostKeyChecking=no
+
+[ppa:flaneurette/lcd]
+fqdn = ppa.launchpad.net
+method = sftp
+incoming = ~flaneurette/ubuntu/lcd
 login = flaneurette
 # ssh_config_options = StrictHostKeyChecking=no
 
@@ -41,6 +41,7 @@ incoming = ~flaneurette/ubuntu/smash
 login = flaneurette
 # ssh_config_options = StrictHostKeyChecking=no
 
+# Somehow this was needed to avoid 110 timeout messages?!? not sure why...
 [ftp-master]
 fqdn = ppa.launchpad.net
 method = sftp
