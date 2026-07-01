@@ -9,14 +9,6 @@ Mine are for demo purposes:
 
 # For update:
 
-```
-tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
-cd smash-1.3
-debuild -S -sa -kABCDEFGHIJKLMNOPQRSTUVWXYZ
-cd ../
-dput -c ~/.dput.cf smash_1.3-0_source.changes
-```
-
 nano ~/.dput.cf
 
 ```
@@ -25,6 +17,16 @@ fqdn = ppa.launchpad.net
 method = sftp
 incoming = ~flaneurette/ubuntu/%(upload)s
 login = flaneurette
+```
+
+Then: 
+
+```
+tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
+cd smash-1.3
+debuild -S -sa -kABCDEFGHIJKLMNOPQRSTUVWXYZ
+cd ../
+dput -c upload:smash smash_1.3-0_source.changes
 ```
 
 ### Generate a new GPG key to decrypt launchpad/ubuntu messages:
